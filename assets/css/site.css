@@ -10,7 +10,7 @@
   --coral-dark: #d44728;
   --gold: #f0a202;
   --ink: #12323a;
-  --muted: #4d6a70;
+  --muted: #34545b;
   --line: rgba(18, 50, 58, 0.12);
   --shadow: 0 24px 50px rgba(6, 42, 50, 0.16);
   --radius: 1.5rem;
@@ -112,6 +112,14 @@ p:last-child {
 .wrap {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
+}
+
+#proof,
+#charters,
+#marina,
+#camp,
+#mail {
+  scroll-margin-top: var(--header);
 }
 
 .eyebrow {
@@ -270,7 +278,9 @@ p:last-child {
   font-size: 0.95rem;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a.is-active {
   color: var(--gold);
 }
 
@@ -490,7 +500,7 @@ p:last-child {
 }
 
 .charters {
-  padding: 1rem 0 5.5rem;
+  padding: 4.5rem 0 5.5rem;
   background:
     radial-gradient(circle at 10% 0%, rgba(26, 163, 168, 0.12), transparent 28%),
     var(--sand);
@@ -598,6 +608,7 @@ p:last-child {
   width: 100%;
   height: min(560px, 70vh);
   object-fit: cover;
+  object-position: 20% 50%;
   border-radius: 2rem 0.6rem 2rem 0.6rem;
   box-shadow: var(--shadow);
   transform: rotate(-1.5deg);
@@ -665,6 +676,11 @@ p:last-child {
   font-weight: 700;
 }
 
+.mail-form.is-sent {
+  width: auto;
+  max-width: 22rem;
+}
+
 .mail-form.is-sent input,
 .mail-form.is-sent button {
   display: none;
@@ -672,6 +688,10 @@ p:last-child {
 
 .mail-form.is-sent .form-note {
   display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 .site-footer {
@@ -798,7 +818,30 @@ p:last-child {
   }
 
   .marina {
-    min-height: 72vh;
+    min-height: 0;
+    display: block;
+    padding-bottom: 1.5rem;
+  }
+
+  .marina-photo {
+    position: relative;
+    inset: auto;
+    height: 48vh;
+    min-height: 260px;
+  }
+
+  .marina-shade {
+    background: linear-gradient(180deg, transparent 45%, rgba(6, 42, 50, 0.45) 100%);
+  }
+
+  .marina-panel {
+    margin: -4.25rem auto 0;
+    max-width: none;
+  }
+
+  .proof-photo img,
+  .camp-photo img {
+    height: 320px;
   }
 }
 
