@@ -25,8 +25,6 @@
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    form.classList.add("is-sent");
-    form.querySelector(".form-note").hidden = false;
   });
 
   var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
